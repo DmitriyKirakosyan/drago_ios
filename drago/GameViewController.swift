@@ -17,24 +17,39 @@ class GameViewController: UIViewController {
         
         // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
         // including entities and graphs.
-        if let scene = GKScene(fileNamed: "GameScene") {
-            
-            // Get the SKScene from the loaded GKScene
-            if let sceneNode = scene.rootNode as! GameScene? {
+        if #available(iOS 10.0, *) {
+            if let scene = GKScene(fileNamed: "GameScene") {
                 
-                // Set the scale mode to scale to fit the window
-                sceneNode.scaleMode = .aspectFill
-                
-                // Present the scene
-                if let view = self.view as! SKView? {
-                    view.presentScene(sceneNode)
+                // Get the SKScene from the loaded GKScene
+                if let sceneNode = scene.rootNode as! GameScene? {
                     
-                    view.ignoresSiblingOrder = true
+                    // Set the scale mode to scale to fit the window
+                    sceneNode.scaleMode = .aspectFill
                     
-                    view.showsFPS = true
-                    view.showsNodeCount = true
+                    // Present the scene
+                    if let view = self.view as! SKView? {
+                        view.presentScene(sceneNode)
+                        
+                        view.ignoresSiblingOrder = true
+                        
+                        view.showsFPS = true
+                        view.showsNodeCount = true
+                    }
                 }
             }
+        } else {
+            if let scene = SKScene(fileNamed: "GameScene") {
+                
+                scene.scaleMode = .aspectFill
+                
+                let view = self.view as! SKView
+                view.ignoresSiblingOrder = true
+                view.showsFPS = true
+                view.showsNodeCount = true
+
+                view.presentScene(scene)
+            }
+            // Fallback on earlier versions
         }
     }
 

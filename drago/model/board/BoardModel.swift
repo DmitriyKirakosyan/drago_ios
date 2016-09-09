@@ -7,10 +7,28 @@
 //
 
 import Foundation
-
+import SpriteKit
 
 typealias Grid = [[BoardField]]
+//typealias Point = (x: Int, y: Int)
 
+struct Point {
+    let x: Int
+    let y: Int
+    
+    func adoptedX() -> CGFloat {
+        return CGFloat(x)
+    }
+    func adoptedY() -> CGFloat {
+        return CGFloat(y)
+    }
+    
+    init(x: Int, y: Int) {
+        self.x = x
+        self.y = y
+    }
+    
+}
 
 enum StoneType {
     case Black, White
