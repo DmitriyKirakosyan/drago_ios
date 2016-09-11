@@ -16,10 +16,13 @@ class GameScene: SKScene {
     private var boardView: BoardView!
     private var infoLabel: SKLabelNode!
     
+    private var boardModel = BoardModel()
+    
     override func sceneDidLoad() {
         
         // Get label node from scene and store it for use later
         boardView = self.childNode(withName: "//board") as! BoardView
+        boardView.model = boardModel
         
         infoLabel = self.childNode(withName: "//infolabel") as! SKLabelNode
         
@@ -33,13 +36,19 @@ class GameScene: SKScene {
             print("location in self : \(location)")
             if boardView?.contains(location) ?? false {
                 let stonePosition = boardView.stoneLocationFor(point: location)
-                let stoneType: StoneType = arc4random_uniform(2) == 0 ? .White : .Black
-                boardView.addStone(point: stonePosition, stoneType: stoneType)
                 
-                infoLabel.text = "position : \(stonePosition), type : \(stoneType)"
+                let point = boardView.positionUtil.gridPoint(for: location)
+                if boardModel.canMove(point: point) {
+                    boardModel.makeMove(point: point)
+                }
+                
+//                boardView.addStone(point: stonePosition, stoneType: stoneType)
+                
+                infoLabel.text = "position : \(stonePosition), next turn : \(boardModel.whosTurn())"
             }
         }
         
     }
+    
     
 }
