@@ -12,6 +12,8 @@
 		2C79A1021D83290A00ADCFA4 /* MovePosibilityChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C79A1011D83290A00ADCFA4 /* MovePosibilityChecker.swift */; };
 		2C79A1041D857BA600ADCFA4 /* BoardUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C79A1031D857BA600ADCFA4 /* BoardUtil.swift */; };
 		2C79A1061D85DABC00ADCFA4 /* BoardCalculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C79A1051D85DABC00ADCFA4 /* BoardCalculations.swift */; };
+		2C79A1081D8727D000ADCFA4 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C79A1071D8727D000ADCFA4 /* GameModel.swift */; };
+		2C79A1101D874F3300ADCFA4 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C79A10F1D874F3300ADCFA4 /* PlayerModel.swift */; };
 		2CDA39671D7A47C300852C1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDA39661D7A47C300852C1D /* AppDelegate.swift */; };
 		2CDA39691D7A47C300852C1D /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2CDA39681D7A47C300852C1D /* GameScene.sks */; };
 		2CDA396B1D7A47C300852C1D /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2CDA396A1D7A47C300852C1D /* Actions.sks */; };
@@ -31,6 +33,10 @@
 		2C79A1011D83290A00ADCFA4 /* MovePosibilityChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovePosibilityChecker.swift; sourceTree = "<group>"; };
 		2C79A1031D857BA600ADCFA4 /* BoardUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardUtil.swift; sourceTree = "<group>"; };
 		2C79A1051D85DABC00ADCFA4 /* BoardCalculations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardCalculations.swift; sourceTree = "<group>"; };
+		2C79A1071D8727D000ADCFA4 /* GameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		2C79A10A1D872A4C00ADCFA4 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		2C79A10C1D872A4D00ADCFA4 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		2C79A10F1D874F3300ADCFA4 /* PlayerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		2CDA39631D7A47C300852C1D /* drago.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = drago.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CDA39661D7A47C300852C1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CDA39681D7A47C300852C1D /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -57,11 +63,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C79A1091D872A4C00ADCFA4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C79A10C1D872A4D00ADCFA4 /* Result.framework */,
+				2C79A10A1D872A4C00ADCFA4 /* ReactiveCocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2CDA395A1D7A47C300852C1D = {
 			isa = PBXGroup;
 			children = (
 				2CDA39651D7A47C300852C1D /* drago */,
 				2CDA39641D7A47C300852C1D /* Products */,
+				2C79A1091D872A4C00ADCFA4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -114,6 +130,7 @@
 		2CDA39811D7B002F00852C1D /* game */ = {
 			isa = PBXGroup;
 			children = (
+				2C79A1071D8727D000ADCFA4 /* GameModel.swift */,
 			);
 			path = game;
 			sourceTree = "<group>";
@@ -121,6 +138,7 @@
 		2CDA39821D7B002F00852C1D /* player */ = {
 			isa = PBXGroup;
 			children = (
+				2C79A10F1D874F3300ADCFA4 /* PlayerModel.swift */,
 			);
 			path = player;
 			sourceTree = "<group>";
@@ -187,6 +205,7 @@
 				2CDA395F1D7A47C300852C1D /* Sources */,
 				2CDA39601D7A47C300852C1D /* Frameworks */,
 				2CDA39611D7A47C300852C1D /* Resources */,
+				2C79A10E1D872A5F00ADCFA4 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -247,6 +266,24 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2C79A10E1D872A5F00ADCFA4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2CDA395F1D7A47C300852C1D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -255,8 +292,10 @@
 				2C79A1041D857BA600ADCFA4 /* BoardUtil.swift in Sources */,
 				2C79A1021D83290A00ADCFA4 /* MovePosibilityChecker.swift in Sources */,
 				2C79A0FE1D81C58400ADCFA4 /* BoardView.swift in Sources */,
+				2C79A1101D874F3300ADCFA4 /* PlayerModel.swift in Sources */,
 				2CDA396D1D7A47C300852C1D /* GameScene.swift in Sources */,
 				2CDA396F1D7A47C300852C1D /* GameViewController.swift in Sources */,
+				2C79A1081D8727D000ADCFA4 /* GameModel.swift in Sources */,
 				2CDA39671D7A47C300852C1D /* AppDelegate.swift in Sources */,
 				2C79A1001D820D4600ADCFA4 /* BoardViewPositionUtil.swift in Sources */,
 				2CDA39941D7D53B600852C1D /* BoardMaker.swift in Sources */,
@@ -386,6 +425,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Q329V6GPTU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = drago/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -400,6 +443,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = Q329V6GPTU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = drago/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

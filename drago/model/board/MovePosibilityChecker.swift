@@ -17,7 +17,7 @@ class MovePosibilityChecker: NSObject {
         self.grid = grid
     }
     
-    func canMove(point: Point, stoneType: StoneType) -> Bool {
+    func canMove(point: Point) -> Bool {
         
         guard !isOutOfBorder(x: point.x, y: point.y, board: grid) else {
             print("[MovePosibilityChecker] ERROR! x, y is ouf ot range : \(point)")

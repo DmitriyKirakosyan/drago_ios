@@ -13,19 +13,15 @@ class BoardView: SKSpriteNode {
     private let boardBorder: CGFloat = 38
     private let fieldSize: CGFloat = 28
     
+    private(set) var player1Score: Int = 0
+    private(set) var player2Score: Int = 0
+    private(set) var playerToMove: StoneType = .Black
+    
     private(set) lazy var positionUtil: BoardViewPositionUtil = {
         return BoardViewPositionUtil(boardSize: self.size)
     }()
     
     private var stoneViews = [String: SKSpriteNode]()
-    
-    var model: BoardModel? {
-        didSet {
-            model?.stoneAdded = self.onStoneAdded
-            model?.stonesRemoved = self.onStonesRemoved
-        }
-    }
-
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -45,7 +41,7 @@ class BoardView: SKSpriteNode {
                                                    y: point.y + self.position.y))
     }
     
-    private func addStone(point: Point, stoneType: StoneType) {
+    func addStone(point: Point, stoneType: StoneType) {
         print("stone grid position : \(point)")
         
         let location = positionUtil.location(for: point)
@@ -61,19 +57,10 @@ class BoardView: SKSpriteNode {
         self.addChild(stone)
     }
     
-    private func removeStone(at point: Point) {
+    func removeStone(at point: Point) {
         if let stoneView = stoneViews[point.strValue] {
             self.removeChildren(in: [stoneView])
         }
     }
  
-    //MARK Model Callbaks
-    
-    private func onStoneAdded(stone: Stone) {
-        addStone(point: stone.point, stoneType: stone.type)
-    }
-    
-    private func onStonesRemoved(stones: [Stone]) {
-        stones.forEach { self.removeStone(at: $0.point) }
-    }
 }
