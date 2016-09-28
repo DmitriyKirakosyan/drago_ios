@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C2DCCB41D9BCD3800EAD8A2 /* ScoreEstimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2DCCB31D9BCD3800EAD8A2 /* ScoreEstimator.swift */; };
 		2C79A0FE1D81C58400ADCFA4 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C79A0FD1D81C58400ADCFA4 /* BoardView.swift */; };
 		2C79A1001D820D4600ADCFA4 /* BoardViewPositionUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C79A0FF1D820D4600ADCFA4 /* BoardViewPositionUtil.swift */; };
 		2C79A1021D83290A00ADCFA4 /* MovePosibilityChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C79A1011D83290A00ADCFA4 /* MovePosibilityChecker.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C2DCCB31D9BCD3800EAD8A2 /* ScoreEstimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreEstimator.swift; sourceTree = "<group>"; };
 		2C79A0FD1D81C58400ADCFA4 /* BoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
 		2C79A0FF1D820D4600ADCFA4 /* BoardViewPositionUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardViewPositionUtil.swift; sourceTree = "<group>"; };
 		2C79A1011D83290A00ADCFA4 /* MovePosibilityChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovePosibilityChecker.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				2CDA39931D7D53B600852C1D /* BoardMaker.swift */,
 				2C79A1011D83290A00ADCFA4 /* MovePosibilityChecker.swift */,
 				2C79A1051D85DABC00ADCFA4 /* BoardCalculations.swift */,
+				2C2DCCB31D9BCD3800EAD8A2 /* ScoreEstimator.swift */,
 			);
 			path = board;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				2C79A1081D8727D000ADCFA4 /* GameModel.swift in Sources */,
 				2CDA39671D7A47C300852C1D /* AppDelegate.swift in Sources */,
 				2C79A1001D820D4600ADCFA4 /* BoardViewPositionUtil.swift in Sources */,
+				2C2DCCB41D9BCD3800EAD8A2 /* ScoreEstimator.swift in Sources */,
 				2CDA39941D7D53B600852C1D /* BoardMaker.swift in Sources */,
 				2C79A1061D85DABC00ADCFA4 /* BoardCalculations.swift in Sources */,
 				2CDA39921D7D4FB300852C1D /* BoardModel.swift in Sources */,

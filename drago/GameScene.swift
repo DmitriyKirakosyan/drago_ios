@@ -53,8 +53,6 @@ class GameScene: SKScene {
                     model.makeMove(point: point)
                 }
                 
-//                boardView.addStone(point: stonePosition, stoneType: stoneType)
-                
                 infoLabel.text = "position : \(stonePosition)"
             }
         }

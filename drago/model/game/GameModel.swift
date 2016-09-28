@@ -21,6 +21,7 @@ class GameModel {
     let boardModel: BoardModel
     
     private var boardCalculations: BoardCalculations
+    private var koPoint: Point?
 
     private var currentTurn = StoneType.Black
 
@@ -47,11 +48,17 @@ class GameModel {
         return currentTurn
     }
     
-    func makeMove(point: Point) {
+    func makeMove(point: Point) -> Bool {
         guard boardModel.canMove(point: point) else {
-            print("ERROR! [BoardMode] can't add stone to the field : \(point)")
-            return
+            print("ERROR! [BoardModel] can't add stone to the field : \(point)")
+            return false
         }
+        
+        guard koPoint != point else {
+            print("[BoardModel KO!")
+            return false
+        }
+        koPoint = nil
         
         var playersUpdated = false
         let score = boardModel.addStone(point: point, stone: currentTurn)
@@ -62,6 +69,13 @@ class GameModel {
         
         let killedStones = boardCalculations.getKilledStones(point: point, stoneType: currentTurn)
         if !killedStones.isEmpty {
+            // check if KO
+            if killedStones.count == 1 {
+                if boardCalculations.getDeadStones(point: point, stoneType: currentTurn).count == 1 {
+                    koPoint = killedStones[0]
+                }
+            }
+
             boardModel.removeStones(points: killedStones)
             currentPlayer.captures += killedStones.count
             playersUpdated = true
@@ -80,6 +94,8 @@ class GameModel {
         
         currentTurn = currentTurn.opponent
         turnChanged?(currentTurn)
+        
+        return true
     }
 
     

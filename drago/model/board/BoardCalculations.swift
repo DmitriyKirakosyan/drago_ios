@@ -15,6 +15,7 @@ class BoardCalculations {
         self.grid = grid
     }
     
+    /// get stones killed by moving to @param point
     func getKilledStones(point: Point, stoneType: StoneType) -> [Point] {
         let pointsToCheck = aroundPoints(for: point).filter { isPoint(point: $0, ofType: stoneType.opponent) }
         
@@ -24,6 +25,7 @@ class BoardCalculations {
         }
     }
 
+    /// get dead stones including @param point, if there are some
     func getDeadStones(point: Point, stoneType: StoneType) -> [Point] {
         return getDeadStones(stoneType: stoneType, deadList: [], freshList: [point])
     }

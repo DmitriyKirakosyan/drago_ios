@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="16A313a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2327e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -25,20 +25,41 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gem-28-UKH">
-                                <frame key="frameInset" minX="146" minY="333" width="123" height="54"/>
-                                <color key="backgroundColor" red="0.81176470590000005" green="0.80392156859999997" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="PLAY"/>
+                                <frame key="frameInset" minX="146" minY="226" width="123" height="32"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Play Offline"/>
                                 <connections>
                                     <segue destination="cVu-7T-qcP" kind="show" id="hPj-Xg-70v"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ud-I4-rl7">
+                                <frame key="frameInset" minX="146" minY="274" width="123" height="34"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Multiplayer"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8AI-Vm-TLY">
+                                <frame key="frameInset" minX="146" minY="326" width="123" height="34"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Play with bot"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psu-7F-XRT">
+                                <frame key="frameInset" minX="146" minY="376" width="123" height="34"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Ratings"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="psu-7F-XRT" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="38N-VM-deJ"/>
+                            <constraint firstItem="8Ud-I4-rl7" firstAttribute="top" secondItem="gem-28-UKH" secondAttribute="bottom" constant="16" id="4p8-qQ-WX3"/>
+                            <constraint firstItem="gem-28-UKH" firstAttribute="top" secondItem="84U-Pb-p87" secondAttribute="bottom" constant="86" id="6OA-BI-fGY"/>
                             <constraint firstItem="84U-Pb-p87" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="7RW-ra-SwH"/>
+                            <constraint firstItem="8AI-Vm-TLY" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="Ljn-mU-NuC"/>
+                            <constraint firstItem="8Ud-I4-rl7" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="mSj-XA-lut"/>
+                            <constraint firstItem="8AI-Vm-TLY" firstAttribute="top" secondItem="8Ud-I4-rl7" secondAttribute="bottom" constant="18" id="pXH-Ed-my4"/>
                             <constraint firstItem="gem-28-UKH" firstAttribute="centerX" secondItem="3se-qz-xqx" secondAttribute="centerX" id="qIi-vx-758"/>
                             <constraint firstItem="84U-Pb-p87" firstAttribute="top" secondItem="8aa-yV-Osq" secondAttribute="bottom" constant="78" id="s85-xG-ztP"/>
-                            <constraint firstItem="gem-28-UKH" firstAttribute="top" secondItem="84U-Pb-p87" secondAttribute="bottom" constant="193" id="w0Q-zK-D4u"/>
+                            <constraint firstItem="psu-7F-XRT" firstAttribute="top" secondItem="8AI-Vm-TLY" secondAttribute="bottom" constant="16" id="zfU-2b-0EW"/>
                         </constraints>
                     </view>
                 </viewController>

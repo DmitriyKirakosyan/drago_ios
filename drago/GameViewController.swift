@@ -51,6 +51,8 @@ class GameViewController: UIViewController {
             }
             // Fallback on earlier versions
         }
+        
+        
     }
 
     override var shouldAutorotate: Bool {
